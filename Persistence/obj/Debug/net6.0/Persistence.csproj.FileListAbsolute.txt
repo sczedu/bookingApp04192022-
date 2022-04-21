@@ -1,0 +1,15 @@
+D:\ALTEN\bookingApp04192022\Persistence\bin\Debug\net6.0\Persistence.deps.json
+D:\ALTEN\bookingApp04192022\Persistence\bin\Debug\net6.0\Persistence.dll
+D:\ALTEN\bookingApp04192022\Persistence\bin\Debug\net6.0\Persistence.pdb
+D:\ALTEN\bookingApp04192022\Persistence\bin\Debug\net6.0\Domain.dll
+D:\ALTEN\bookingApp04192022\Persistence\bin\Debug\net6.0\Domain.pdb
+D:\ALTEN\bookingApp04192022\Persistence\obj\Debug\net6.0\Persistence.csproj.AssemblyReference.cache
+D:\ALTEN\bookingApp04192022\Persistence\obj\Debug\net6.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\ALTEN\bookingApp04192022\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfoInputs.cache
+D:\ALTEN\bookingApp04192022\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfo.cs
+D:\ALTEN\bookingApp04192022\Persistence\obj\Debug\net6.0\Persistence.csproj.CoreCompileInputs.cache
+D:\ALTEN\bookingApp04192022\Persistence\obj\Debug\net6.0\Persistence.csproj.CopyComplete
+D:\ALTEN\bookingApp04192022\Persistence\obj\Debug\net6.0\Persistence.dll
+D:\ALTEN\bookingApp04192022\Persistence\obj\Debug\net6.0\refint\Persistence.dll
+D:\ALTEN\bookingApp04192022\Persistence\obj\Debug\net6.0\Persistence.pdb
+D:\ALTEN\bookingApp04192022\Persistence\obj\Debug\net6.0\ref\Persistence.dll

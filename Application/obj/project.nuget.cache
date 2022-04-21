@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "gn9ZIjXGs6z2OuDZtAuGPj70Fq3op7EhCcHqYFf4aEQIcCJC2bHkDLaitW75OUSs46M2VX5JFqzolhBO0BLjXw==",
+  "success": true,
+  "projectFilePath": "D:\\ALTEN\\bookingApp04192022\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\BARI00788\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\BARI00788\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

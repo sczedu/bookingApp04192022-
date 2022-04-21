@@ -1,0 +1,70 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Transform": "AWS::Serverless-2016-10-31",
+  "Description": "An AWS Serverless Application that uses the ASP.NET Core framework running in Amazon Lambda.",
+  "Parameters": {},
+  "Conditions": {},
+  "Resources": {
+    "BookingSchedules":{
+            "Type":"AWS::DynamoDB::Table",
+            "Properties":{
+            "AttributeDefinitions":[
+                {
+                    "AttributeName":"Id",
+                    "AttributeType":"S"
+                }
+            ],
+            "KeySchema":[
+                {
+                    "AttributeName":"Id",
+                    "KeyType":"HASH"
+                }
+            ],
+            "ProvisionedThroughput":{
+                "ReadCapacityUnits":"5",
+                "WriteCapacityUnits":"5"
+            },
+            "TableName":"Booking_Schedules"
+            }
+        },
+    "AspNetCoreFunction": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "Web::Web.LambdaEntryPoint::FunctionHandlerAsync",
+        "Runtime": "dotnet6",
+        "CodeUri": "",
+        "MemorySize": 256,
+        "Timeout": 30,
+        "Role": null,
+        "Policies": [
+          "AWSLambda_FullAccess",
+          "AmazonDynamoDBFullAccess"
+        ],
+        "Events": {
+          "ProxyResource": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/{proxy+}",
+              "Method": "ANY"
+            }
+          },
+          "RootResource": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/",
+              "Method": "ANY"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "ApiURL": {
+      "Description": "API endpoint URL for Prod environment",
+      "Value": {
+        "Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+      }
+    }
+  }
+}
