@@ -24,11 +24,13 @@ public class Startup
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Booking API", Version = "v1" });
         });
+        services.AddRouting(options => options.LowercaseUrls = true);
 
-        services.AddTransient<IScheduleRepository, ScheduleRepository>();
+        services.AddTransient<IReservationRepository, ReservationRepository>();
+        services.AddTransient<IConfigurationRepository, ConfigurationRepository>();
 
         services.AddTransient<IMediator, Mediator>();
-        services.AddMediatR(typeof(Application.Query.GetSchedule).Assembly);
+        services.AddMediatR(typeof(Application.Query.GetReservation).Assembly);
         services.AddDefaultAWSOptions(Configuration.GetAWSOptions());
         services.AddAWSService<IAmazonDynamoDB>();
         services.AddTransient<IDynamoDBContext, DynamoDBContext>();

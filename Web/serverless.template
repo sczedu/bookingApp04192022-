@@ -5,7 +5,83 @@
   "Parameters": {},
   "Conditions": {},
   "Resources": {
-    "BookingSchedules":{
+    "BookingServiceReservation":{
+            "Type":"AWS::DynamoDB::Table",
+            "Properties":{
+            "AttributeDefinitions":[
+                {
+                    "AttributeName":"Id",
+                    "AttributeType":"S"
+                },
+                {
+                    "AttributeName": "Starts",
+                    "AttributeType": "S"
+                },
+                {
+                    "AttributeName": "Ends",
+                    "AttributeType": "S"
+                },
+                {
+                    "AttributeName": "Active",
+                    "AttributeType": "S"
+                }
+            ],
+            "KeySchema":[
+                {
+                    "AttributeName":"Id",
+                    "KeyType":"HASH"
+                }
+            ],
+            "GlobalSecondaryIndexes": [
+                {
+                    "IndexName": "reservation_starts_index",
+                    "KeySchema": [
+                        {
+                            "AttributeName": "Active",
+                            "KeyType": "HASH"
+                        },
+                        {
+                            "AttributeName": "Starts",
+                            "KeyType": "RANGE"
+                        }
+                    ],
+                    "Projection": {
+                        "ProjectionType": "ALL"
+                    },
+                    "ProvisionedThroughput":{
+                        "ReadCapacityUnits":"5",
+                        "WriteCapacityUnits":"5"
+                    }
+                },
+                {
+                    "IndexName": "reservation_ends_index",
+                    "KeySchema": [
+                        {
+                            "AttributeName": "Active",
+                            "KeyType": "HASH"
+                        },
+                        {
+                            "AttributeName": "Ends",
+                            "KeyType": "RANGE"
+                        }
+                    ],
+                    "Projection": {
+                        "ProjectionType": "ALL"
+                    },
+                    "ProvisionedThroughput":{
+                        "ReadCapacityUnits":"5",
+                        "WriteCapacityUnits":"5"
+                    }
+                }
+            ],
+            "ProvisionedThroughput":{
+                "ReadCapacityUnits":"5",
+                "WriteCapacityUnits":"5"
+            },
+            "TableName":"BookingService_Reservation"
+            }
+        },
+    "BookingServiceConfiguration":{
             "Type":"AWS::DynamoDB::Table",
             "Properties":{
             "AttributeDefinitions":[
@@ -24,7 +100,7 @@
                 "ReadCapacityUnits":"5",
                 "WriteCapacityUnits":"5"
             },
-            "TableName":"Booking_Schedules"
+            "TableName":"BookingService_Configuration"
             }
         },
     "AspNetCoreFunction": {

@@ -3,11 +3,11 @@ using MediatR;
 
 namespace Application.Query
 {
-    public class GetSchedule : IRequest<Schedule>
+    public class GetReservation : IRequest<Reservation>
     {
         public string Id { get; set; }
 
-        public GetSchedule(string id)
+        public GetReservation(string id)
         {
             Id = id;
         }
