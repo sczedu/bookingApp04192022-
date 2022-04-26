@@ -45,3 +45,24 @@ After tables created, needs to setup configutarion table
 ```
     aws dynamodb put-item --table-name BookingService_Configuration --item '{"Id": {"S": "CONFIG"},"ReservationStartsAt": {"S": "00:00:00"},"ReservationEndsAt": {"S": "23:59:59"},"MaximumReservationDays": {"N": "3"},"MaximumEndReservationDays": {"N": "30"}}'
 ```
+
+## Appplication API:
+
+This application have swagger to facilitate, can be access by ```...swagger/index.html```
+
+Method names and the corresponding routes:
+
+| Service Method Name                                   | HTTP Method | Route                      |
+| ----------------------------------------------------- | ----------- | -------------------------- |
+| GetReservation(string id)                             | GET         | /reservation/{id}          |
+| AvailabilityCheck(DateTime Starts, Datetime Ends)     | GET         | /reservation/availability  |
+| CreateReservation(ReservationRequest reservation)     | POST        | /reservation               |
+| EditReservation(ModifyReservationRequest reservation) | PUT         | /reservation               |
+| ReservationCancel(string id)                          | DELETE      | /reservation/{id}          |
+
+
+- **Get**: '**/reservation/{id}**' Get information about specific **id** reservation.
+- **Get**: '**/reservation/availability**' Get information about availability.
+- **Post**: '**reservation**' Place reservation.
+- **Put**: '**reservation**' Modify dates of reservation.
+- **Delete**: '**/reservation/{id} **' Cancel a specific reservation.

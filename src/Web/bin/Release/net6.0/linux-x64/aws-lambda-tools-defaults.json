@@ -12,6 +12,6 @@
     "s3-prefix"     : "bookingApp04192022/",
     "template"      : "serverless.template",
     "template-parameters" : "",
-    "s3-bucket"           : "bookingbucket-04192022",
+    "s3-bucket"           : "bookingbucket04192022",
     "stack-name"          : "bookingstack"
 }

@@ -26,19 +26,22 @@ namespace Application.CommandHandler
 
             InputValidations(request);
 
-            _configuration = await _mediator.Send(new GetConfiguration());
-
-            if (_configuration is null)
-                _errors.Add(new Error(AvailabilityProblems.InternalProblem));
-            else
+            if (!_errors.Any())
             {
-                _checkAvailabilityResponse.Starts = request.Starts.Date.Add(_configuration.ReservationStartsAt);
-                _checkAvailabilityResponse.Ends = request.Ends.Date.Add(_configuration.ReservationEndsAt);
-                await BusinessValidationsAsync(request);
-                await AvailabilityValidationAsync(request);
+                _configuration = await _mediator.Send(new GetConfiguration());
+
+                if (_configuration is null)
+                    _errors.Add(new Error(AvailabilityProblems.InternalProblem));
+                else
+                {
+                    _checkAvailabilityResponse.Starts = request.Starts.Date.Add(_configuration.ReservationStartsAt);
+                    _checkAvailabilityResponse.Ends = request.Ends.Date.Add(_configuration.ReservationEndsAt);
+                    await BusinessValidationsAsync(request);
+                    await AvailabilityValidationAsync(request);
+                }
             }
 
-            if(_errors.Any())
+            if (_errors.Any())
             {
                 _checkAvailabilityResponse.Errors = _errors.Distinct().ToList();
                 _checkAvailabilityResponse.IsAvailable = false;

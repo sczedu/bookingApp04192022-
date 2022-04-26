@@ -16,7 +16,9 @@ public class BookingController : ControllerBase
     }
 
     [HttpGet]
-    [Route("/{id}")]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(404)]
+    [Route("/reservation/{id}")]
     public async Task<ActionResult> GetReservation(string id)
     {
         var result = await _mediator.Send(new GetReservation(id));
@@ -28,6 +30,8 @@ public class BookingController : ControllerBase
     }
 
     [HttpGet]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(400)]
     [Route("/reservation/availability")]
     public async Task<ActionResult> AvailabilityCheck(AvailabilityCheckRequest request)
     {
@@ -40,8 +44,10 @@ public class BookingController : ControllerBase
     }
 
     [HttpPost]
+    [ProducesResponseType(201)]
+    [ProducesResponseType(400)]
     [Route("/reservation")]
-    public async Task<ActionResult> CreateReservation(ReservationRequest reservation)
+    public async Task<ActionResult> CreateReservation([FromBody] ReservationRequest reservation)
     {
         if (string.IsNullOrWhiteSpace(reservation.UserIdentification))
             return BadRequest();
@@ -55,8 +61,10 @@ public class BookingController : ControllerBase
     }
 
     [HttpPut]
+    [ProducesResponseType(201)]
+    [ProducesResponseType(400)]
     [Route("/reservation")]
-    public async Task<ActionResult> EditReservation(ModifyReservationRequest reservation)
+    public async Task<ActionResult> EditReservation([FromBody] ModifyReservationRequest reservation)
     {
         if (string.IsNullOrWhiteSpace(reservation.ReservationId))
             return BadRequest();
@@ -70,8 +78,10 @@ public class BookingController : ControllerBase
     }
 
     [HttpDelete]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(404)]
     [Route("/reservation/{id}")]
-    public async Task<ActionResult> ReservationCancelAsync(string id)
+    public async Task<ActionResult> ReservationCancel(string id)
     {
         if (string.IsNullOrWhiteSpace(id))
             return BadRequest();
