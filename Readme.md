@@ -65,6 +65,6 @@ Method names and the corresponding routes:
 
 - **Get**: '**/reservation/{id}**' Get information about specific **id** reservation.
 - **Get**: '**/reservation/availability**' Get information about availability.
-- **Post**: '**reservation**' Place reservation.
-- **Put**: '**reservation**' Modify dates of reservation.
-- **Delete**: '**/reservation/{id} **' Cancel a specific reservation.
+- **Post**: '**/reservation**' Place reservation.
+- **Put**: '**/reservation**' Modify dates of reservation.
+- **Delete**: '**/reservation/{id}**' Cancel a specific reservation.
