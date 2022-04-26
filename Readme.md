@@ -39,7 +39,7 @@ Deploy application
     dotnet lambda deploy-serverless
 ```
 
-## DynamoDB configuration from the command line:
+## DynamoDB configuration from the command line at aws cloudshell:
 
 After tables created, needs to setup configutarion table
 ```
