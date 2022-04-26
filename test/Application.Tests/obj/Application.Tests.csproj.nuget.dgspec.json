@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ALTEN\\bookingApp04192022\\Test\\Application.Tests\\Application.Tests.csproj": {}
+    "D:\\ALTEN\\bookingApp04192022\\test\\Application.Tests\\Application.Tests.csproj": {}
   },
   "projects": {
     "D:\\ALTEN\\bookingApp04192022\\src\\Application\\Application.csproj": {
@@ -198,14 +198,14 @@
         }
       }
     },
-    "D:\\ALTEN\\bookingApp04192022\\Test\\Application.Tests\\Application.Tests.csproj": {
+    "D:\\ALTEN\\bookingApp04192022\\test\\Application.Tests\\Application.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ALTEN\\bookingApp04192022\\Test\\Application.Tests\\Application.Tests.csproj",
+        "projectUniqueName": "D:\\ALTEN\\bookingApp04192022\\test\\Application.Tests\\Application.Tests.csproj",
         "projectName": "Application.Tests",
-        "projectPath": "D:\\ALTEN\\bookingApp04192022\\Test\\Application.Tests\\Application.Tests.csproj",
+        "projectPath": "D:\\ALTEN\\bookingApp04192022\\test\\Application.Tests\\Application.Tests.csproj",
         "packagesPath": "C:\\Users\\BARI00788\\.nuget\\packages\\",
-        "outputPath": "D:\\ALTEN\\bookingApp04192022\\Test\\Application.Tests\\obj\\",
+        "outputPath": "D:\\ALTEN\\bookingApp04192022\\test\\Application.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

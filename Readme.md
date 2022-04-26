@@ -29,19 +29,21 @@ If already installed check if new version is available.
 
 Execute unit tests
 ```
-    cd "bookingApp04192022/test/bookingApp04192022.Tests"
+    cd "bookingApp04192022/test/Application.Tests"
+    dotnet test
+    cd "bookingApp04192022/test/Web.Tests"
     dotnet test
 ```
 
 Deploy application
 ```
-    cd "bookingApp04192022/src/bookingApp04192022"
+    cd "bookingApp04192022/src/Web"
     dotnet lambda deploy-serverless
 ```
 
 ## DynamoDB configuration from the command line at aws cloudshell:
 
-After tables created, needs to setup configutarion table
+After tables created, at first time, needs to setup configuration table using:
 ```
     aws dynamodb put-item --table-name BookingService_Configuration --item '{"Id": {"S": "CONFIG"},"ReservationStartsAt": {"S": "00:00:00"},"ReservationEndsAt": {"S": "23:59:59"},"MaximumReservationDays": {"N": "3"},"MaximumEndReservationDays": {"N": "30"}}'
 ```

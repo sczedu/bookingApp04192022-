@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0z6uPZ4yWYyI24cTCv5wMl+J0RZiigIKMj4NcOUHavu2AtNSre1UCAXbB49XvrkEEk6uE44il23BeEGdGvqeEQ==",
+  "dgSpecHash": "A2Y+IiBJez6UU6ll7FiSMhtJ0PCIKpwVPBY+a2Zny0Dqmm3gG9frnp3l8hPgUwElw1wCKeqh6MnhbTl6hNUCLg==",
   "success": true,
   "projectFilePath": "D:\\ALTEN\\bookingApp04192022\\src\\Persistence.DynamoDB\\Persistence.DynamoDB.csproj",
   "expectedPackageFiles": [

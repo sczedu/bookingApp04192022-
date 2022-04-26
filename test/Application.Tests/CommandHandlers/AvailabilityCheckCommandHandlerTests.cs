@@ -91,8 +91,8 @@ namespace Application.Tests.CommandHandlers
             var command = new AvailabilityCheckCommand(starts, ends);
             var result = await _handler.Handle(command, CancellationToken.None);
 
-            _mediator.Verify(c => c.Send(It.IsAny<GetReservationsBetween>(), It.IsAny<CancellationToken>()), Times.Once);
-            _mediator.Verify(c => c.Send(It.IsAny<GetConfiguration>(), It.IsAny<CancellationToken>()), Times.Once);
+            _mediator.Verify(c => c.Send(It.IsAny<GetReservationsBetween>(), It.IsAny<CancellationToken>()), Times.Never);
+            _mediator.Verify(c => c.Send(It.IsAny<GetConfiguration>(), It.IsAny<CancellationToken>()), Times.Never);
             Assert.False(result.IsAvailable);
         }
 
@@ -107,8 +107,8 @@ namespace Application.Tests.CommandHandlers
             var command = new AvailabilityCheckCommand(starts, ends);
             var result = await _handler.Handle(command, CancellationToken.None);
 
-            _mediator.Verify(c => c.Send(It.IsAny<GetReservationsBetween>(), It.IsAny<CancellationToken>()), Times.Once);
-            _mediator.Verify(c => c.Send(It.IsAny<GetConfiguration>(), It.IsAny<CancellationToken>()), Times.Once);
+            _mediator.Verify(c => c.Send(It.IsAny<GetReservationsBetween>(), It.IsAny<CancellationToken>()), Times.Never);
+            _mediator.Verify(c => c.Send(It.IsAny<GetConfiguration>(), It.IsAny<CancellationToken>()), Times.Never);
             Assert.False(result.IsAvailable);
         }
 
@@ -123,8 +123,8 @@ namespace Application.Tests.CommandHandlers
             var command = new AvailabilityCheckCommand(starts, ends);
             var result = await _handler.Handle(command, CancellationToken.None);
 
-            _mediator.Verify(c => c.Send(It.IsAny<GetReservationsBetween>(), It.IsAny<CancellationToken>()), Times.Once);
-            _mediator.Verify(c => c.Send(It.IsAny<GetConfiguration>(), It.IsAny<CancellationToken>()), Times.Once);
+            _mediator.Verify(c => c.Send(It.IsAny<GetReservationsBetween>(), It.IsAny<CancellationToken>()), Times.Never);
+            _mediator.Verify(c => c.Send(It.IsAny<GetConfiguration>(), It.IsAny<CancellationToken>()), Times.Never);
             Assert.False(result.IsAvailable);
         }
 
@@ -163,7 +163,7 @@ namespace Application.Tests.CommandHandlers
         [Fact]
         public async Task WhenConfigurationDoesntLoad_ShouldReturnError()
         {
-            var starts = DateTime.UtcNow;
+            var starts = DateTime.UtcNow.AddDays(1);
             var ends = DateTime.UtcNow.AddDays(1);
             var reservationResponse = new System.Collections.Generic.List<Domain.Entities.Reservation>();
             _mediator.Setup(c => c.Send(It.IsAny<GetReservationsBetween>(), It.IsAny<CancellationToken>())).ReturnsAsync(reservationResponse);
