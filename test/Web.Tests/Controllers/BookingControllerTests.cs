@@ -188,7 +188,7 @@ namespace Web.Tests.Controllers
         {
             _mediator.Setup(c => c.Send(It.IsAny<CancelReservationCommand>(), It.IsAny<CancellationToken>())).ReturnsAsync(true);
 
-            var result = await _bookingController.ReservationCancelAsync("id");
+            var result = await _bookingController.ReservationCancel("id");
             var okResult = (OkResult)result;
 
             Assert.Equal(200, okResult.StatusCode);
@@ -199,7 +199,7 @@ namespace Web.Tests.Controllers
         {
             _mediator.Setup(c => c.Send(It.IsAny<CancelReservationCommand>(), It.IsAny<CancellationToken>())).ReturnsAsync(false);
 
-            var result = await _bookingController.ReservationCancelAsync("id");
+            var result = await _bookingController.ReservationCancel("id");
             var okResult = (NotFoundResult)result;
 
             Assert.Equal(404, okResult.StatusCode);
@@ -208,7 +208,7 @@ namespace Web.Tests.Controllers
         [Fact]
         public async Task ReservationCancelAsync_WhenIdIsEMpty_ShouldReturnsBadRequest()
         {
-            var result = await _bookingController.ReservationCancelAsync("");
+            var result = await _bookingController.ReservationCancel("");
             var okResult = (BadRequestResult)result;
 
             _mediator.Verify(c => c.Send(It.IsAny<CancelReservationCommand>(), It.IsAny<CancellationToken>()), Times.Never);

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/NNtrC4UP7dp39vwbaeUDhx4LOzCNQ0c13UfC4gH9J1kkhoa6JWib0rCX6N2Utp6ADLteE5CC33Lx8MST5WZ+A==",
+  "dgSpecHash": "K7eu1rxv5fayMWCIjIdcIVfAzpNedgHI7zRBIpniY1c+yeQNdQLIRbtlh/9tW0XmGtj0oeOsKYS8W2YjbUtw/Q==",
   "success": true,
   "projectFilePath": "D:\\ALTEN\\bookingApp04192022\\src\\Web\\Web.csproj",
   "expectedPackageFiles": [
@@ -36,10 +36,7 @@
     "C:\\Users\\BARI00788\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\BARI00788\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
     "C:\\Users\\BARI00788\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\BARI00788\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\6.0.4\\microsoft.netcore.app.runtime.linux-x64.6.0.4.nupkg.sha512",
-    "C:\\Users\\BARI00788\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\6.0.4\\microsoft.aspnetcore.app.runtime.linux-x64.6.0.4.nupkg.sha512",
-    "C:\\Users\\BARI00788\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.4\\microsoft.netcore.app.crossgen2.win-x64.6.0.4.nupkg.sha512",
-    "C:\\Users\\BARI00788\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.4\\microsoft.netcore.app.host.linux-x64.6.0.4.nupkg.sha512"
+    "C:\\Users\\BARI00788\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.4\\microsoft.netcore.app.crossgen2.win-x64.6.0.4.nupkg.sha512"
   ],
   "logs": []
 }
